@@ -21,4 +21,10 @@ public class GreetingService {
         return greeting;
     }
 //UC4 Completed
+
+    //for UC5
+    public GreetingInfo search(Long id){
+        return greetingMap.get(id);
+    }
+//UC5 Completed
 }
