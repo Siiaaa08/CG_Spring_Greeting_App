@@ -49,4 +49,9 @@ public class GreetingController {
 
     //UC3 Completed
 
+    @PostMapping("/save")
+    public GreetingInfo saveGreeting(@RequestBody String message) {
+        return greetingService.save(message);
+    }
+    //UC4 Completed
 }
