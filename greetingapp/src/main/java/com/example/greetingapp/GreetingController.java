@@ -3,6 +3,8 @@ package com.example.greetingapp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/greeting")
 public class GreetingController {
@@ -66,4 +68,11 @@ public class GreetingController {
         }
     }
 //UC5 completed
+
+    //for UC6
+    @GetMapping("/list")
+    public List<GreetingInfo> getAllGreetings() {
+        return greetingService.getAllGreetings();
+    }
+    //UC6 Completed
 }

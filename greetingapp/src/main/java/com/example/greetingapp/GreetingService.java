@@ -2,7 +2,9 @@ package com.example.greetingapp;
 
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -27,4 +29,11 @@ public class GreetingService {
         return greetingMap.get(id);
     }
 //UC5 Completed
+
+    //for UC6
+    public List<GreetingInfo> getAllGreetings() {
+        return new ArrayList<>(greetingMap.values());
+    }
+    //UC6 Completed
+
 }
