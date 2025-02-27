@@ -48,4 +48,10 @@ public class GreetingService {
     //UC7 Completed
 
 
+    //for UC8
+    public boolean deleteGreeting(Long id) {
+        return greetingMap.remove(id) != null;
+    }
+    //UC8 completed
+
 }
