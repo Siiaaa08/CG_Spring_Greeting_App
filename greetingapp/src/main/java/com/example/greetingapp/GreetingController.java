@@ -1,5 +1,6 @@
 package com.example.greetingapp;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -25,4 +26,27 @@ public class GreetingController {
     public User posting(@RequestBody User user){
         return new User("Received:" +user.getMessage());
     }
+    //UC1 completed
+
+    private final GreetingService greetingService;
+
+
+    @GetMapping("/")
+    public String message(){
+        return greetingService.getGreeting();
+    }
+    @Autowired
+    public GreetingController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
+    //UC2 Completed
+
+    @GetMapping("/name")
+    public String name(@RequestParam(value = "name", defaultValue = "World")String name){
+        return "Hello "+name+"!";
+    }
+
+    //UC3 Completed
+
 }
