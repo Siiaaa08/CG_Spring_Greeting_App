@@ -36,4 +36,16 @@ public class GreetingService {
     }
     //UC6 Completed
 
+    // for UC7
+    public GreetingInfo updateGreeting(Long id, String newMessage) {
+        if (greetingMap.containsKey(id)) {
+            GreetingInfo greeting = greetingMap.get(id);
+            greeting.setMessage(newMessage);
+            return greeting;
+        }
+        return null; // If ID not found
+    }
+    //UC7 Completed
+
+
 }

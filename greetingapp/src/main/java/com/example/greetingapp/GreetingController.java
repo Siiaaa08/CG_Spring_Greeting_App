@@ -75,4 +75,17 @@ public class GreetingController {
         return greetingService.getAllGreetings();
     }
     //UC6 Completed
+
+    //for UC7
+    @PutMapping("/edit/{id}")
+    public GreetingInfo editGreeting(@PathVariable Long id, @RequestBody String newMessage) {
+        GreetingInfo updatedGreeting = greetingService.updateGreeting(id, newMessage);
+        if (updatedGreeting != null) {
+            return updatedGreeting;
+        } else {
+            return new GreetingInfo(-1L, "Greeting ID not found");
+        }
+    }
+    //UC7 Completed
+
 }
